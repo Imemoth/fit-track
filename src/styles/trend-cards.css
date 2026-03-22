@@ -1,0 +1,266 @@
+.trend-card,
+.mini-area-chart {
+  backdrop-filter: blur(14px);
+}
+
+.trend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, var(--surface-soft), transparent),
+    var(--bg-elevated);
+  box-shadow: var(--shadow);
+  --trend-line-start: var(--mint);
+  --trend-line-end: var(--mint);
+  --trend-fill-start: rgba(133, 240, 200, 0.34);
+  --trend-fill-end: rgba(133, 240, 200, 0.05);
+}
+
+.trend-card--amber {
+  --trend-line-start: var(--amber);
+  --trend-line-end: #ffd9a8;
+  --trend-fill-start: rgba(255, 183, 100, 0.34);
+  --trend-fill-end: rgba(255, 183, 100, 0.05);
+}
+
+.trend-card--lime {
+  --trend-line-start: var(--lime);
+  --trend-line-end: #efff9a;
+  --trend-fill-start: rgba(210, 255, 102, 0.34);
+  --trend-fill-end: rgba(210, 255, 102, 0.05);
+}
+
+.trend-card--clay {
+  --trend-line-start: var(--clay);
+  --trend-line-end: #ff9d76;
+  --trend-fill-start: rgba(242, 120, 75, 0.34);
+  --trend-fill-end: rgba(242, 120, 75, 0.05);
+}
+
+.trend-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.trend-card__heading {
+  min-width: 0;
+}
+
+.trend-card__eyebrow {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.trend-card__title {
+  margin: 6px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.trend-card__action {
+  flex: 0 0 auto;
+}
+
+.trend-card__body {
+  display: grid;
+  gap: 14px;
+}
+
+.trend-card__summary {
+  display: grid;
+  gap: 4px;
+}
+
+.trend-card__value {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.trend-card__detail {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.trend-card__chart {
+  min-height: 128px;
+}
+
+.trend-card__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trend-card__stat {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+}
+
+.trend-card__stat-label {
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.trend-card__stat-value {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.trend-card__stat-detail {
+  color: var(--text-soft);
+  font-size: 0.86rem;
+}
+
+.mini-area-chart {
+  position: relative;
+  overflow: visible;
+  min-height: 128px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(180deg, var(--surface-soft), transparent),
+    var(--bg-soft);
+}
+
+.mini-area-chart__tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 14px));
+  z-index: 3;
+  display: grid;
+  gap: 2px;
+  min-width: max-content;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.mini-area-chart__tooltip strong {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mini-area-chart__tooltip span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mini-area-chart__tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--bg-elevated);
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  transform: translate(-50%, -5px) rotate(45deg);
+}
+
+.mini-area-chart__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mini-area-chart__baseline {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+
+.mini-area-chart__area {
+  stroke: none;
+}
+
+.mini-area-chart__line {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.08));
+}
+
+.mini-area-chart__dot {
+  fill: var(--bg);
+  stroke: var(--trend-line-start);
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+.mini-area-chart--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  min-height: 128px;
+  border-style: dashed;
+}
+
+.mini-area-chart__empty-copy {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.mini-area-chart__empty-label {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.mini-area-chart__empty-detail {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.trend-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 980px) {
+  .trend-card-grid,
+  .trend-card__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .trend-card,
+  .mini-area-chart {
+    border-radius: 20px;
+  }
+
+  .trend-card__header {
+    flex-direction: column;
+  }
+}

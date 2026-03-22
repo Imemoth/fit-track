@@ -1,0 +1,135 @@
+export type CommonFood = {
+  id: string;
+  name: string;
+  brand?: string;
+  category: string;
+  servingLabel: string;
+  calories: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+};
+
+export const commonFoods: CommonFood[] = [
+  {
+    id: "chicken-rice-bowl",
+    name: "Csirkés rizstál",
+    category: "Ebéd",
+    servingLabel: "1 tál",
+    calories: 640,
+    proteinG: 46,
+    carbsG: 62,
+    fatG: 16,
+  },
+  {
+    id: "skyr",
+    name: "Skyr natúr",
+    category: "Snack",
+    servingLabel: "150 g",
+    calories: 96,
+    proteinG: 17,
+    carbsG: 6,
+    fatG: 0.3,
+  },
+  {
+    id: "oats-banana",
+    name: "Zabkása banánnal",
+    category: "Reggeli",
+    servingLabel: "1 adag",
+    calories: 420,
+    proteinG: 15,
+    carbsG: 63,
+    fatG: 11,
+  },
+  {
+    id: "eggs-toast",
+    name: "Rántotta pirítóssal",
+    category: "Reggeli",
+    servingLabel: "3 tojás + 2 szelet",
+    calories: 380,
+    proteinG: 24,
+    carbsG: 24,
+    fatG: 20,
+  },
+  {
+    id: "whey-shake",
+    name: "Tejsavó shake",
+    brand: "Protein blend",
+    category: "Snack",
+    servingLabel: "1 shake",
+    calories: 128,
+    proteinG: 24,
+    carbsG: 3,
+    fatG: 2,
+  },
+  {
+    id: "beef-potato",
+    name: "Marhahús sütőburgonyával",
+    category: "Vacsora",
+    servingLabel: "1 tányér",
+    calories: 710,
+    proteinG: 43,
+    carbsG: 58,
+    fatG: 28,
+  },
+  {
+    id: "greek-yogurt-berries",
+    name: "Görög joghurt bogyósokkal",
+    category: "Snack",
+    servingLabel: "200 g",
+    calories: 190,
+    proteinG: 20,
+    carbsG: 18,
+    fatG: 4,
+  },
+  {
+    id: "turkey-sandwich",
+    name: "Pulykás szendvics",
+    category: "Ebéd",
+    servingLabel: "1 szendvics",
+    calories: 430,
+    proteinG: 31,
+    carbsG: 39,
+    fatG: 14,
+  },
+  {
+    id: "cottage-cheese-fruit",
+    name: "Túrókrém gyümölccsel",
+    category: "Snack",
+    servingLabel: "1 tál",
+    calories: 240,
+    proteinG: 24,
+    carbsG: 19,
+    fatG: 7,
+  },
+  {
+    id: "salmon-rice",
+    name: "Lazac rizzsel",
+    category: "Vacsora",
+    servingLabel: "1 tányér",
+    calories: 590,
+    proteinG: 38,
+    carbsG: 45,
+    fatG: 26,
+  },
+  {
+    id: "tuna-pasta",
+    name: "Tonhalas tészta",
+    category: "Ebéd",
+    servingLabel: "1 tál",
+    calories: 560,
+    proteinG: 34,
+    carbsG: 67,
+    fatG: 15,
+  },
+  {
+    id: "apple-peanut-butter",
+    name: "Alma mogyoróvajjal",
+    category: "Snack",
+    servingLabel: "1 adag",
+    calories: 230,
+    proteinG: 6,
+    carbsG: 24,
+    fatG: 12,
+  },
+];
